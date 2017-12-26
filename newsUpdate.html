@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>放心贷后台数据管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="img/data/icon2.png" type="image/x-icon" />
+    <!-- END META SECTION -->
+
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    <!-- START PAGE SIDEBAR -->
+    <!--#include virtual="left.html"-->
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- START X-NAVIGATION VERTICAL -->
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <!-- TOGGLE NAVIGATION -->
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+            </li>
+            <!-- END TOGGLE NAVIGATION -->
+            <!-- SEARCH -->
+            <!--<li class="xn-search">-->
+            <!--<form role="form">-->
+            <!--<input type="text" name="search" placeholder="Search..."/>-->
+            <!--</form>-->
+            <!--</li>   -->
+            <!-- END SEARCH -->
+            <!-- SIGN OUT -->
+            <li class="xn-icon-button pull-right">
+                <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+            </li>
+            <!-- END SIGN OUT -->
+
+        </ul>
+        <!-- END X-NAVIGATION VERTICAL -->
+
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li><a href="#">消息管理</a></li>
+            <li class="active">新建消息</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <div class="sucess">操作成功</div>
+            <form action="" class="form-horizontal col-md-12" role="form">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">版本名称</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control version_name	" placeholder="请输入">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">版本序号</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control version_code" placeholder="请输入">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">更新banner图</label>
+                    <div class="col-md-6">
+                        <input type="file" class="logoImg">
+                        <img src="" alt="" class="originalImg"/>
+                        <span class="fa fa-times delImg"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">更新描述</label>
+                    <div class="col-md-6">
+                        <textarea class="form-control updatelog" rows="5" ></textarea>
+                    </div>
+                </div>
+                <div class="form-group apkBox">
+                    <label class="col-md-2 control-label">apk包</label>
+                    <div class="col-md-6">
+                        <input type="file" class="apk" id="apk">
+                        <div id="box" style="display: none"></div>
+                        <span class="originalApk"></span>
+                        <span class="fa fa-times delApk"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">是否强制更新</label>
+                    <div class="col-md-6">
+                        <label class="check">
+                            <div class="icheckbox_minimal-grey" style="position: relative;">
+                                <input type="checkbox" class="icheckbox forceupdate" style="position: absolute; opacity: 0;">
+                            </div>
+                            <span>（默认不选中，选中为强制升级）</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">上线时间</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control datepicker online_date" value="">
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group bootstrap-timepicker">
+                            <input type="text" class="form-control timepicker24 online_time">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                        </div>
+                    </div>
+                    <span>选填</span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">下线时间</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control datepicker offline_date" value="">
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group bootstrap-timepicker">
+                            <input type="text" class="form-control timepicker24 offline_time">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                        </div>
+                    </div>
+                    <span>选填</span>
+                </div>
+
+            </form>
+            <div class="col-md-push-1 col-md-2 push-up-20">
+                <button class="btn btn-info saveProduct">保存</button>
+            </div>
+
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+        <!--page-->
+        <!--<div class="buttonBox pagination">-->
+        <!--<ul class="pagination pagination-sm pull-right "></ul>-->
+        <!--</div>-->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+            <div class="mb-content">
+                <p>Are you sure you want to log out?</p>
+                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+            </div>
+            <div class="mb-footer">
+                <div class="pull-right">
+                    <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                    <button class="btn btn-default btn-lg mb-control-close">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MESSAGE BOX-->
+
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+<!--<script src="js/jquery-migrate-1.2.1.js"></script>-->
+<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- END PLUGINS -->
+<!--<script src="js/data/jquery.cookie.js"></script>-->
+<script src="js/data/base.js"></script>
+<script src="js/plugins/bootstrap/bootstrap-pagy.min.js"></script>
+<!--<script src="js/sorttable.js"></script>-->
+<script src="js/data/spark-md5.js"></script>
+<script src="js/data/newsUpdate.js"></script>
+<!--<script src="js/data/md5.js"></script>-->
+<!-- START THIS PAGE PLUGINS-->
+<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="js/plugins/daterangepicker/moment.js"></script>
+<script type="text/javascript" src="js/plugins/daterangepicker/daterangepickers.js"></script>
+<script src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+<!-- END THIS PAGE PLUGINS-->
+
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="js/settings.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/actions.js"></script>
+<!-- END TEMPLATE -->
+<!-- data start-->
+<!-- END SCRIPTS -->
+
+</body>
+</html>
+
+
+
+
+
+

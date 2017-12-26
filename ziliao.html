@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>放心贷后台数据管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="img/data/icon2.png" type="image/x-icon" />
+    <!-- END META SECTION -->
+
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+    <!-- START PAGE SIDEBAR -->
+    <!--#include virtual="left.html"-->
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- START X-NAVIGATION VERTICAL -->
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <!-- TOGGLE NAVIGATION -->
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+            </li>
+            <!-- END TOGGLE NAVIGATION -->
+            <!-- SEARCH -->
+            <!--<li class="xn-search">-->
+            <!--<form role="form">-->
+            <!--<input type="text" name="search" placeholder="Search..."/>-->
+            <!--</form>-->
+            <!--</li>   -->
+            <!-- END SEARCH -->
+            <!-- SIGN OUT -->
+            <li class="xn-icon-button pull-right">
+                <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+            </li>
+            <!-- END SIGN OUT -->
+
+        </ul>
+        <!-- END X-NAVIGATION VERTICAL -->
+
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li class="active">资料库</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <!--<div class="panel panel-default tabs">-->
+                <div class="panel-body tab-content">
+                    <div class="col-md-1 back_index">
+                        <button  type="button" class="btn btn-info ">返回</button>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="faqSearchKeyword" placeholder="Search...">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary" id="faqSearch">搜索</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 news_index">
+                        <a href="newsProduct.html">
+                            <button  type="button" class="btn btn-info col-md-1" id="btn2">新建</button>
+                        </a>
+                    </div>
+                    <div class="sucess">操作成功</div>
+                    <div class="panel panel-default" style="overflow-x:auto ">
+                        <div class="panel-body" style="">
+                            <table class="table table-bordered text-center normol_table" id="tables">
+                                <thead >
+                                <tr class="text-center">
+                                    <th>序号</th>
+                                    <th>产品名称</th>
+                                    <th>产品logo</th>
+                                    <th>产品描述（20字以内）</th>
+                                    <th>产品利率（%）</th>
+                                    <th>放款额度</th>
+                                    <th>是否分期</th>
+                                    <th>放款期限</th>
+                                    <th>放款通过率（%）</th>
+                                    <th>申请成功（人）</th>
+                                    <th>产品标签（8字之内）</th>
+                                    <th>落地页链接</th>
+                                    <th>合作平台</th>
+                                    <th>创建时间</th>
+                                    <th>修改时间</th>
+                                    <th>访问次数</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="dataBody" id="sortable">
+                                <!--<tr id="setname_number2">-->
+                                    <!--<td>111</td>-->
+                                    <!--<td class="title">111</td>-->
+                                    <!--<td class="urls">111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>111</td>-->
+                                    <!--<td>-->
+                                        <!--<button  type="button" class="btn btn-info editP">编辑</button>-->
+                                        <!--<button  type="button" class="btn btn-info delP">删除</button>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+
+                    </div>
+                    <!--<div class="text-center save_index">-->
+                        <!--<button  type="button" class="btn btn-info ordinal">保存</button>-->
+                    <!--</div>-->
+
+                </div>
+
+            <!--</div>-->
+
+
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+        <!--page-->
+        <!--<div class="buttonBox pagination">-->
+        <!--<ul class="pagination pagination-sm pull-right "></ul>-->
+        <!--</div>-->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+            <div class="mb-content">
+                <p>Are you sure you want to log out?</p>
+                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+            </div>
+            <div class="mb-footer">
+                <div class="pull-right">
+                    <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                    <button class="btn btn-default btn-lg mb-control-close">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MESSAGE BOX-->
+
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+<!--<script src="js/jquery-migrate-1.2.1.js"></script>-->
+<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- END PLUGINS -->
+<script src="js/data/index.js"></script>
+<script src="js/data/base.js"></script>
+<script src="js/plugins/bootstrap/bootstrap-pagy.min.js"></script>
+<script src="js/sorttable.js"></script>
+<script src="js/data/ziliao.js"></script>
+<!-- START THIS PAGE PLUGINS-->
+<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="js/plugins/daterangepicker/moment.js"></script>
+<script type="text/javascript" src="js/plugins/daterangepicker/daterangepickers.js"></script>
+<script src="js/plugins/datatables/jquery.dataTables.min.js"></script>
+<!-- END THIS PAGE PLUGINS-->
+
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="js/settings.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/actions.js"></script>
+<!-- END TEMPLATE -->
+<!-- data start-->
+<script>
+//    $(function(){
+//        var newArr=[];
+//        $("#sortable").sortable({
+//            update:function(){
+//                var arr=$("#sortable").sortable("toArray",{attribute:"id"});
+////                        console.log(arr);
+//                for(var i in arr){
+//                    var data={};
+//                    data.pid=arr[i];
+//                    data.ordinal=parseInt(i)+1;
+//                    newArr.push(data);
+//                }
+////                        console.log(newArr);
+//            }
+//
+//        });
+//        var arr=$("#sortable").sortable("serialize",{key:"aaa"})
+////console.log(newArr)
+////                $( "#sortable" ).disableSelection();
+//    })
+
+    //            $("#tables").dataTable({
+    //                searching:true,
+    //                paging:false,
+    //                ordering:false
+    //            })
+</script>
+<!-- END SCRIPTS -->
+</body>
+</html>
+
+
+
+
+
+

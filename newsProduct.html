@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SECTION -->
+    <title>放心贷后台数据管理</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="img/data/icon2.png" type="image/x-icon" />
+    <!-- END META SECTION -->
+
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+<!-- START PAGE CONTAINER -->
+<div class="page-container">
+
+    <!-- START PAGE SIDEBAR -->
+    <!--#include virtual="left.html"-->
+    <!-- END PAGE SIDEBAR -->
+
+    <!-- PAGE CONTENT -->
+    <div class="page-content">
+
+        <!-- START X-NAVIGATION VERTICAL -->
+        <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+            <!-- TOGGLE NAVIGATION -->
+            <li class="xn-icon-button">
+                <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+            </li>
+            <!-- END TOGGLE NAVIGATION -->
+            <!-- SEARCH -->
+            <!--<li class="xn-search">-->
+            <!--<form role="form">-->
+            <!--<input type="text" name="search" placeholder="Search..."/>-->
+            <!--</form>-->
+            <!--</li>   -->
+            <!-- END SEARCH -->
+            <!-- SIGN OUT -->
+            <li class="xn-icon-button pull-right">
+                <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+            </li>
+            <!-- END SIGN OUT -->
+
+        </ul>
+        <!-- END X-NAVIGATION VERTICAL -->
+
+        <!-- START BREADCRUMB -->
+        <ul class="breadcrumb">
+            <li class=""><a href="ziliao.html">资料库</a></li>
+            <li class="active">新建产品</li>
+        </ul>
+        <!-- END BREADCRUMB -->
+
+        <!-- PAGE CONTENT WRAPPER -->
+        <div class="page-content-wrap">
+            <div class="sucess">操作成功</div>
+            <form action="" class="form-horizontal col-md-12" role="form">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">产品名称</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control title" placeholder="请输入" name="title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">产品Logo</label>
+                    <div class="col-md-10">
+                        <input type="file" class="logoImg" name="file" id="test" value="111.jpg">
+                        <span class="imgWord">(上传文件建议512×512.png格式，大小不超过1M)</span>
+                        <img src="" alt="" class="originalImg"/>
+                        <span class="fa fa-times delImg"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">产品描述</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control description" placeholder="请输入">
+                    </div>
+                    <span>20字之内</span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">产品利率</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control interest_rate" placeholder="请输入">
+                    </div>
+                    <span class="">（单位：%）</span>
+                    <div class="col-md-2">
+                        <select class="form-control select interest_type" style="display: none;">
+                            <option value="1">日利率</option>
+                            <option value="2">月利率</option>
+                            <option value="3">年利率</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">放款额度</label>
+                    <div class="col-md-1">
+                        <input type="tel" class="form-control loan_limit_from" placeholder="">
+                    </div>
+                    <span class="col-md-1" style="text-align: center;line-height: 30px;padding: 0;width:20px">——</span>
+                    <div class="col-md-1">
+                        <input type="tel" class="form-control loan_limit_to" placeholder="">
+                    </div>
+                    <span>输入整数类型，如100-300</span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">是否分期</label>
+                    <div class="col-md-6">
+                        <input type="checkbox" class="instalment"/>
+                        <span>（选中为是，默认为否）</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">放款期限</label>
+                    <div class="col-md-1">
+                        <input type="tel" class="form-control deadline_from" placeholder="">
+                    </div>
+                    <span class="col-md-1" style="text-align: center;line-height: 30px;padding: 0;width:20px">——</span>
+                    <div class="col-md-1">
+                        <input type="tel" class="form-control deadline_to" placeholder="">
+                    </div>
+                    <span>若期限为整数，如7，请输入0-7</span>
+                    <div class="col-md-2">
+                        <select class="form-control select deadline_type" style="display: none;">
+                            <option value="1">日</option>
+                            <option value="2">月</option>
+                        </select>
+                    </div>
+                    </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-6">
+                        <input type="text" class="tagsinput" value="" id="tags1512110123812" style="display: none;">
+                    </div>
+                    <span>请输入整数，如1</span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">放款通过率</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control passing_rate" placeholder="请输入">
+                    </div>
+                    <span>(单位：%)</span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">申请成功</label>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control apply_success" placeholder="请输入">
+                    </div>
+                    <span>人</span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">产品标签</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control product_tag" placeholder="请输入">
+                    </div>
+                    <span>8字之内（选填）</span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">发送平台</label>
+                    <div class="col-md-6 bottom">
+                        <input type="checkbox" class="" value="2" name="aa" id="aa"/><span style="margin-right:30px">安卓</span>
+                        <label for="aa" class="btn btn-info">qeqe</label>
+                        <input type="checkbox" class="aaa" value="1" name="ab"/><span>IOS</span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">产品落地链接</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control lianjie" placeholder="请输入">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">申请条件</label>
+                    <div class="col-md-6">
+                        <textarea type="text" class="form-control Requirements" placeholder="请输入"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">准备材料</label>
+                    <div class="col-md-6">
+                        <textarea type="text" class="form-control flow" placeholder="请输入"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">申请流程</label>
+                    <div class="col-md-10 ">
+                        <div class="img_lable">
+                            <!--<div class=" imgBox" des="身份证" img_id="1"><img src="img/logo1.png" alt=""/></div>-->
+                            <!--<div class=" imgBox" des="驾驶证" img_id="2"><img src="img/logo1.png" alt=""/></div>-->
+                            <!--<div class=" imgBox" des="银行卡" img_id="3"><img src="img/logo1.png" alt=""/></div>-->
+                        </div>
+                        <div class="col-md-1">
+                            <input type="file" class="fileinput btn-success fa fa-plus" name="filename" id="filename" title=""/>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">已选流程</label>
+                    <div class="col-md-10 img_lable_chose">
+                        <!--<div class="imgBox_chose fa fa-times"><img src="img/logo1.png" alt="" class="fa fa-times"/><span>sdsads</span></div>-->
+                        <!--<div class="imgBox_chose"><img src="img/logo1.png" alt=""/></div>-->
+                        <!--<div class="imgBox_chose"><img src="img/logo1.png" alt=""/></div>-->
+
+                    </div>
+
+                </div>
+                <!--<div class="btn btn-info" onclick="upload()">保存11</input>-->
+            </form>
+            <div class="col-md-push-1 col-md-2 push-up-20 saveProduct">
+                <!--<a href="index.html">-->
+                    <div class="btn btn-info">保存</input>
+                <!--</a>-->
+            </div>
+                <script>
+                    function upload(){
+                        console.log(123123);
+                        var formData = new FormData();
+                        var xhr = new XMLHttpRequest();
+                        formData.append("gid",111);
+                        formData.append("title",222);
+                        formData.append("file",document.getElementById("test").files[0]);
+
+                        xhr.open('post',"http://172.16.40.149:9191/v1/cms/loanproduct");
+                        xhr.send(formData);
+                        xhr.addEventListener("load", function(data){
+                            if(data.currentTarget.status==200){
+                                console.log(data.currentTarget.response)
+                            }else{
+                                console.log("err",data);
+                            }
+                        }, false);
+                    }
+                </script>
+
+        </div>
+        <!-- END PAGE CONTENT WRAPPER -->
+        <!--page-->
+        <!--<div class="buttonBox pagination">-->
+        <!--<ul class="pagination pagination-sm pull-right "></ul>-->
+        <!--</div>-->
+    </div>
+    <!-- END PAGE CONTENT -->
+</div>
+<!-- END PAGE CONTAINER -->
+
+<!-- MESSAGE BOX-->
+<div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+    <div class="mb-container">
+        <div class="mb-middle">
+            <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+            <div class="mb-content">
+                <p>Are you sure you want to log out?</p>
+                <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+            </div>
+            <div class="mb-footer">
+                <div class="pull-right">
+                    <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                    <button class="btn btn-default btn-lg mb-control-close">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MESSAGE BOX-->
+
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+<!--<script src="js/jquery-migrate-1.2.1.js"></script>-->
+<script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- END PLUGINS -->
+<!--<script src="js/data/jquery.cookie.js"></script>-->
+<script src="js/data/base.js"></script>
+<script src="js/plugins/bootstrap/bootstrap-pagy.min.js"></script>
+<script src="js/data/newProduct.js"></script>
+<!--<script src="js/data/base.js"></script>-->
+<!-- START THIS PAGE PLUGINS-->
+<script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+<script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+<script type="text/javascript" src="js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="js/plugins/daterangepicker/moment.js"></script>
+<script type="text/javascript" src="js/plugins/daterangepicker/daterangepickers.js"></script>
+<script src="js/plugins/bootstrap/bootstrap-file-input.js"></script>
+    <script src="js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+    <script src="js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+<!-- END THIS PAGE PLUGINS-->
+
+<!-- START TEMPLATE -->
+<script type="text/javascript" src="js/settings.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/actions.js"></script>
+<!-- END TEMPLATE -->
+<!-- data start-->
+<!-- END SCRIPTS -->
+</body>
+</html>
+
+
+
+
+
+
